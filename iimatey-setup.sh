@@ -36,7 +36,7 @@ sudo chmod 0755 /usr/local/bin/tunnel # make executeable
 # WHAT WE NEED
 tmux -V
 ttyd --version
-/usr/local/bin/tunnel --version
+/usr/local/bin/tunnel -V
 echo $PATH | grep /usr/local/bin >/dev/null || echo "You may want to add /usr/local/bin to your PATH"
 
 # Install iimatey script from github
