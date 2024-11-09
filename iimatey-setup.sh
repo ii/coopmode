@@ -17,9 +17,20 @@ esac
 
 case $(uname -o) in
   GNU/Linux)
-    sudo apt-get update
-    sudo apt-get install -y ttyd tmux curl
     export OS=linux
+    case $(lsb-release -i) in
+      Bluefin)
+        brew install ttyd tmux curl
+      ;;
+      Ubuntu)
+        sudo apt-get update
+        sudo apt-get install -y ttyd tmux curl
+      ;;
+      Debian)
+        sudo apt-get update
+        sudo apt-get install -y ttyd tmux curl
+      ;;
+    esac
     ;;
   Darwin)
     brew install ttyd tmux curl
